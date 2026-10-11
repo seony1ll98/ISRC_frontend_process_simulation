@@ -1,0 +1,4 @@
+dopant,energy_keV,dose_cm2,Rp_nm,dRp_nm,peak_cm3,fraction_above_surface
+B,100,1e15,296.0,85.7,4.66e+19,2.76e-04
+P,100,1e15,127.0,46.1,8.65e+19,2.94e-03
+As,100,1e15,69.2,26.1,1.53e+20,4.01e-03

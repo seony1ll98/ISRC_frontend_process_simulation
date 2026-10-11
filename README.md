@@ -8,7 +8,7 @@
 | # | 공정 | 모델 | 상태 | 보고서 |
 |---|---|---|---|---|
 | 01 | 열산화 (Thermal Oxidation) | Deal-Grove, Massoud | 완료 | [docs/01_oxidation.md](docs/01_oxidation.md) |
-| 02 | 이온주입 및 확산 (Ion Implantation, Drive-in) | Gaussian profile, Fick 확산 | 예정 | |
+| 02 | 이온주입 및 확산 (Ion Implantation, Drive-in) | Gaussian 분포, Fick 확산(해석해와 수치해), Masetti 이동도 | 완료 | [docs/02_implant_diffusion.md](docs/02_implant_diffusion.md) |
 | 03 | 포토리소그래피 (Photolithography) | Rayleigh 해상도, DOF | 예정 | |
 | 04 | 건식 식각 (Dry Etching) | 식각률, 선택비, 이방성 | 예정 | |
 | 05 | 증착 및 금속배선 (CVD, Metallization) | Arrhenius 율속 영역, 면저항 | 예정 | |
@@ -21,6 +21,14 @@
 - 온도, 시간, 분위기(dry/wet), 결정 방향에 따른 산화막 두께를 계산하고, 목표 두께에 필요한 공정 시간을 역계산합니다.
 - 공개 산화 계산기(University of Alberta nanoFAB)와 16개 조건을 비교해 최대 오차 0.063 %를 확인했습니다.
 - 10 nm 게이트 산화막을 Deal-Grove 모델로만 설계하면 실제(Massoud 모델 기준) 두께가 약 2배가 됩니다. 얇은 산화막에서는 모델 선택이 공정 결과를 좌우합니다.
+
+## 02. 이온주입 및 확산 주요 결과
+
+![well anneal](figures/implant_diffusion/fig3_well_anneal.png)
+
+- 주입 분포, 열처리 후 분포, 접합 깊이, 면저항을 한 흐름으로 계산합니다(n-well drive-in 설계 예시).
+- 확산 해석해와 Crank-Nicolson 수치해가 최대 0.008 % 이내로 일치하고, 이동도 모델은 BYU 계산기와 P, As 14개 조건에서 일치합니다.
+- 같은 dose라도 drive-in이 길어질수록 면저항이 낮아집니다(1651 → 755 Ω/sq). 분포가 퍼지며 최대 농도가 낮아지고 이동도가 높아지기 때문입니다.
 
 ## 구조
 
@@ -40,4 +48,5 @@ python -m venv .venv
 .venv/bin/pip install -r requirements.txt
 .venv/bin/python -m pytest
 .venv/bin/python scripts/run_oxidation.py
+.venv/bin/python scripts/run_implant_diffusion.py
 ```

@@ -1,0 +1,4 @@
+case,Cs_cm3,D_cm2_s,Dt_cm2,drive_in_h,Rs_ohm_sq_masetti
+"Plummer (Irvin curve, D from text)",4e+17,1.5e-13,3.76e-09,6.95,567
+"This project, Cs from text",4e+17,1.43e-13,3.76e-09,7.31,567
+"This project, Cs from Masetti integration",2.03e+17,1.43e-13,4.24e-09,8.25,900

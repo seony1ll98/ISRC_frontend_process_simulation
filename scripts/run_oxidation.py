@@ -8,14 +8,14 @@ import csv
 import sys
 from pathlib import Path
 
-import matplotlib
-
-matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
+
+from plot_style import BLUE_RAMP, CAT, GRID, SURFACE, TEXT, TEXT_2  # noqa: E402
+from plot_style import save as _save  # noqa: E402
 
 from isrc_sim.constants import K_B_EV, celsius_to_kelvin  # noqa: E402
 from isrc_sim.oxidation import (  # noqa: E402
@@ -32,31 +32,11 @@ FIG_DIR = ROOT / "figures" / "oxidation"
 RES_DIR = ROOT / "results" / "oxidation"
 REF_CSV = ROOT / "data" / "reference" / "nanofab_sithox_2026-10-11.csv"
 
-# 색상: 범주형은 고정 순서, 온도처럼 순서가 있는 값은 한 색상의 명도 단계로 표현한다.
-TEXT = "#0b0b0b"
-TEXT_2 = "#52514e"
-GRID = "#e4e3df"
-SURFACE = "#fcfcfb"
-CAT = ["#2a78d6", "#eb6834", "#1baf7a"]          # blue, orange, aqua
-BLUE_RAMP = ["#86b6ef", "#3987e5", "#1c5cab", "#0d366b"]
-
-plt.rcParams.update({
-    "figure.facecolor": SURFACE, "axes.facecolor": SURFACE, "savefig.facecolor": SURFACE,
-    "axes.edgecolor": TEXT_2, "axes.labelcolor": TEXT, "xtick.color": TEXT_2, "ytick.color": TEXT_2,
-    "axes.grid": True, "grid.color": GRID, "grid.linewidth": 0.8,
-    "axes.spines.top": False, "axes.spines.right": False,
-    "lines.linewidth": 2.0, "font.size": 10, "axes.titlesize": 11, "axes.titleweight": "bold",
-    "legend.frameon": False, "figure.dpi": 150,
-})
-
 TEMPS_C = [900, 1000, 1100, 1200]
 
 
 def save(fig, name):
-    FIG_DIR.mkdir(parents=True, exist_ok=True)
-    fig.savefig(FIG_DIR / name, bbox_inches="tight")
-    plt.close(fig)
-    print(f"  saved figures/oxidation/{name}")
+    _save(fig, FIG_DIR, name)
 
 
 def fig1_thickness_vs_time():
