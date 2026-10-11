@@ -1,0 +1,7 @@
+case,metric,value
+"isotropic etch vs exact (r = 0.4 um, dx = 2.5 nm)",mean boundary error nm,5.88
+dx = 20 nm,isotropic boundary / linear depth / linear bias error nm,35.1 / 0.00 / 40.0
+dx = 10 nm,isotropic boundary / linear depth / linear bias error nm,16.2 / 5.00 / 25.0
+dx = 5 nm,isotropic boundary / linear depth / linear bias error nm,8.8 / 2.50 / 12.5
+dx = 2.5 nm,isotropic boundary / linear depth / linear bias error nm,5.9 / 1.25 / 3.8
+flux factor n=1 vs (1+cos)/2,max abs error,1.9e-05

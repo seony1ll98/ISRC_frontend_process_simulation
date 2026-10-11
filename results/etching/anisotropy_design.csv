@@ -1,0 +1,13 @@
+model,ion_angular_n,sidewall_ion_fraction,R_ion_over_R_chem,anisotropy_Af
+linear,40,0.0635,0.25,0.187
+linear,40,0.0635,1,0.468
+linear,40,0.0635,4,0.749
+saturation,10,0.1293,0.25,0.843
+saturation,10,0.1293,1,0.771
+saturation,10,0.1293,4,0.574
+saturation,40,0.0635,0.25,0.922
+saturation,40,0.0635,1,0.881
+saturation,40,0.0635,4,0.747
+saturation,80,0.0447,0.25,0.945
+saturation,80,0.0447,1,0.914
+saturation,80,0.0447,4,0.81

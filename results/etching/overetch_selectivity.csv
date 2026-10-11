@@ -1,0 +1,4 @@
+overetch_pct,S_for_loss_le_5nm,S_for_loss_le_2nm,loss_at_S25_nm,loss_at_S50_nm
+10.0,19.6,49.0,3.92,1.96
+20.0,26.6,66.4,5.31,2.66
+50.0,47.4,118.6,9.49,4.74

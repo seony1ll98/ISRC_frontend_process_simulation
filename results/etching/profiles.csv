@@ -1,0 +1,5 @@
+case,R_chem,R_ion,model,time_to_clear_min,depth_um,bias_nm_at_0.1um,Af
+(a) chemical only,0.1,0.0,linear,5.0,0.499,481,0.04
+(b) ions only (vertical),0.0,0.1,linear,5.0,0.499,1,1.0
+"(c) linear, half and half",0.05,0.05,linear,5.0,0.499,246,0.51
+(d) ion-enhanced (saturation),0.1,0.1,saturation,10.0,0.499,1,1.0

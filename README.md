@@ -10,7 +10,7 @@
 | 01 | 열산화 (Thermal Oxidation) | Deal-Grove, Massoud | 완료 | [docs/01_oxidation.md](docs/01_oxidation.md) |
 | 02 | 이온주입 및 확산 (Ion Implantation, Drive-in) | Gaussian 분포, Fick 확산(해석해와 수치해), Masetti 이동도 | 완료 | [docs/02_implant_diffusion.md](docs/02_implant_diffusion.md) |
 | 03 | 포토리소그래피 (Photolithography) | Fresnel 회절(근접 노광), Abbe 부분 결맞음 결상, 공정 창 | 완료 | [docs/03_lithography.md](docs/03_lithography.md) |
-| 04 | 건식 식각 (Dry Etching) | 식각률, 선택비, 이방성 | 예정 | |
+| 04 | 건식 식각 (Dry Etching) | 선형 및 이온 보조 식각 모델, level set 단면 진화, 과식각과 선택비 설계 | 완료 | [docs/04_etching.md](docs/04_etching.md) |
 | 05 | 증착 및 금속배선 (CVD, Metallization) | Arrhenius 율속 영역, 면저항 | 예정 | |
 | 06 | 공정 통합 (Process Integration) | CMOS 단면 구성, Vth 추정 | 예정 | |
 
@@ -38,6 +38,14 @@
 - 근접 노광의 인쇄 폭은 간격과 무관하게 W/√(λg) 하나로 정리되며, CD를 ±10 % 안으로 관리하려면 패턴이 교재의 최소 선폭 √(λg)의 약 2.1배 이상이어야 합니다.
 - g-line, i-line, KrF 모두 레지스트 기준 최소 half pitch가 k₁ ≈ 0.40에서 나옵니다. k₁이 장비가 아니라 조명과 레지스트로 정해지는 공정 계수임을 보여줍니다.
 
+## 04. 건식 식각 주요 결과
+
+![etch profiles](figures/etching/fig2_profiles.png)
+
+- 화학 성분과 이온 성분의 결합(선형 모델, 이온 보조 포화 모델)으로 식각 속도를 계산하고, level set 방법으로 단면이 변하는 과정을 2D로 시뮬레이션합니다. 등방성, 이방성, 선형 결합의 정확해와 비교해 검증했습니다.
+- 이온 보조 식각은 화학 성분이 충분하고 이온이 속도를 제한할 때 이방성이 가장 좋고, 이온을 늘리면 오히려 이방성이 떨어집니다.
+- 01 모듈의 10 nm 게이트 산화막 위 poly-Si 식각에서, 과식각 20 %로 산화막 손실을 5 nm 이하로 유지하려면 선택비가 약 27 필요합니다. 교재가 제시한 25~50과 같은 범위입니다.
+
 ## 구조
 
 ```
@@ -58,4 +66,5 @@ python -m venv .venv
 .venv/bin/python scripts/run_oxidation.py
 .venv/bin/python scripts/run_implant_diffusion.py
 .venv/bin/python scripts/run_lithography.py
+.venv/bin/python scripts/run_etching.py
 ```
