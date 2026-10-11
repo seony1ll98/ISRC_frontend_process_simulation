@@ -1,0 +1,4 @@
+tool,wavelength_nm,NA,R_k1_0.61_nm,DOF_k2_0.5_um
+g-line,436,0.43,619,1.179
+i-line,365,0.5,445,0.73
+KrF,248,0.6,252,0.344

@@ -1,0 +1,4 @@
+tool,rayleigh_R_um,cutoff_half_pitch_um,min_half_pitch_iline_resist_um,k1_at_min,min_half_pitch_duv_resist_um
+g-line,0.619,0.317,0.41,0.404,0.36
+i-line,0.445,0.228,0.29,0.397,0.26
+KrF,0.252,0.129,0.17,0.411,0.15

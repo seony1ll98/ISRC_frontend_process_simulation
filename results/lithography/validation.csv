@@ -1,0 +1,7 @@
+case,metric,value
+Abbe vs circle-overlap analytic (i-line NA0.5 sigma0.6),max abs contrast diff,0.0031
+coherent defocus vs analytic (1 um pitch),max rel error pct,0.00026
+"Fresnel integral vs paraxial FFT (W 2um, g 2um)",max abs intensity diff,1.3e-05
+"Fresnel approximation vs exact FFT (W 2um, g 2um)",max abs intensity diff,0.182
+"Fresnel approximation vs exact FFT (W 2um, g 10um)",max abs intensity diff,0.013
+"Fresnel approximation vs exact FFT (W 2um, g 40um)",max abs intensity diff,0.004

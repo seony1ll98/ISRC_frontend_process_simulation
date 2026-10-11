@@ -1,0 +1,4 @@
+tool,wavelength_nm,NA,sigma,half_pitch_um,k1,contrast,resolved_by_iline_resist
+g-line,436,0.43,0.6,1.0,0.986,0.983,True
+g-line,436,0.43,0.6,0.5,0.493,0.802,True
+i-line,365,0.5,0.6,0.5,0.685,0.945,True
