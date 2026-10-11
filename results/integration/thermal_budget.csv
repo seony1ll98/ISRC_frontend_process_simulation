@@ -1,0 +1,11 @@
+step,dopant,Dt_cm2,diffusion_length_nm
+well drive-in 1050 °C 5 h,B,8.4e-10,579.5
+gate ox 800 °C 37 min,B,8.19e-14,5.7
+furnace 900 °C 30 min,B,1.66e-12,25.7
+RTA 1000 °C 1 min,B,8.38e-13,18.3
+silicide 650 °C 1 min,B,4.68e-18,0.0
+well drive-in 1050 °C 5 h,As,1.05e-10,204.7
+gate ox 800 °C 37 min,As,3.75e-15,1.2
+furnace 900 °C 30 min,As,1.19e-13,6.9
+RTA 1000 °C 1 min,As,8.83e-14,5.9
+silicide 650 °C 1 min,As,9.07e-20,0.0

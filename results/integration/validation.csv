@@ -1,0 +1,5 @@
+case,metric,value
+"uniform doping NMOS, n+ poly",max |dVt| V,5.4e-07
+"uniform doping PMOS, p+ poly",max |dVt| V,5.4e-07
+buried sheet efficiency (1 - x/W),max error % of qQ/Cox,1.53
+2D LDD analytic vs numerical (900 C 30 min),max diff % of peak,0.02

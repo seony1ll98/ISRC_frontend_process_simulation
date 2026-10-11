@@ -1,0 +1,13 @@
+step,textbook_condition,this_project,module
+Substrate,"p-type (100), 5~50 Ω·cm",10 Ω·cm → N_A = 1.36e+15 cm^-3,02 (Masetti)
+LOCOS,90 min @ 1000 °C H2O → ≈ 0.5 µm,0.52 µm (Si 소모 0.23 µm),01
+Wells,"B, P 1e13; drive-in 4~6 h @ 1000~1100 °C",5 h @ 1050 °C → N-well x_j 1.43 µm,02
+Gate oxide,"3~5 nm, 0.5~1 h @ 800 °C O2",4 nm → 37 min @ 800 °C (Massoud),01
+Vt adjust,B / As 1~5e12 @ 50~100 keV,"B 10 keV 6.03e+12, As 30 keV 2.77e+12 → Vt +0.30 / -0.30 V",02 + 06
+Gate litho,-,"L_g 0.5 µm, i-line NA 0.5: k1 0.68, DOF ±0.73 µm",03
+Poly etch,"anisotropic plasma etch, poly 0.5 µm",gate oxide loss ≤ 2 nm needs selectivity ≥ 111 (OE 20 %),04
+Spacer,conformal SiO2 0.5 µm + anisotropic etch,TEOS sidewall coverage 0.95 → spacer 475 nm,05 + 04
+LDD + final anneal,P/B 5e13 @ 50 keV; 30 min @ 900 °C or 1 min RTA @ 1000 °C,furnace 900 °C 30 min: L_eff 0.40 µm; RTA 1000 °C 1 min: L_eff 0.41 µm,02 + 06
+S/D,"As 2~4e15 @ 75 keV, B 1~3e15 @ 50 keV","As 3e15: R_p 53 nm, peak 5.7e+20 cm^-3 (진성 확산 범위 밖)",02
+Contact W fill,TiN barrier + W CVD,W (S_c 0.01) min coverage 0.95 at AR 2,05
+Metal 1,Al sputter + plasma etch,Al 0.5 µm: R_s 60 mΩ/sq; 10 mm line 184 ps,05

@@ -12,7 +12,7 @@
 | 03 | 포토리소그래피 (Photolithography) | Fresnel 회절(근접 노광), Abbe 부분 결맞음 결상, 공정 창 | 완료 | [docs/03_lithography.md](docs/03_lithography.md) |
 | 04 | 건식 식각 (Dry Etching) | 선형 및 이온 보조 식각 모델, level set 단면 진화, 과식각과 선택비 설계 | 완료 | [docs/04_etching.md](docs/04_etching.md) |
 | 05 | 증착 및 금속배선 (CVD, PVD, Metallization) | Grove 모델, 재방출 단차 피복, 4-point probe 보정, 배선 RC 지연 | 완료 | [docs/05_deposition_metallization.md](docs/05_deposition_metallization.md) |
-| 06 | 공정 통합 (Process Integration) | CMOS 단면 구성, Vth 추정 | 예정 | |
+| 06 | 공정 통합 (Process Integration) | 누적 열처리, 문턱전압(공핍 근사), LDD 2D 측면 확산과 L_eff | 완료 | [docs/06_process_integration.md](docs/06_process_integration.md) |
 
 ## 01. 열산화 주요 결과
 
@@ -54,6 +54,27 @@
 - LPCVD는 저압에서 물질 전달 계수가 약 100배 커져 실제 공정 온도에서 항상 반응 율속이 되므로, 가스 흐름보다 온도(700 °C에서 1 °C당 2 %)가 균일도를 정합니다.
 - 4-point probe 보정 계수를 영상법으로 계산해 Smits 식, 유한차분 해와 비교했습니다. 웨이퍼 가장자리나 작은 시료에서 4.532를 그대로 쓰면 면저항을 수~수십 % 크게 읽습니다.
 
+## 06. 공정 통합 주요 결과
+
+![cross section](figures/integration/fig5_cmos_cross_section.png)
+
+- 교재(Plummer Ch. 2)의 CMOS 공정 흐름을 01~05 모듈로 차례로 계산했습니다. LOCOS 0.52 µm(교재 약 0.5 µm), 게이트 산화막 3.4~5.6 nm(교재 3~5 nm)로 교재의 대표 결과를 재현합니다.
+- 공핍 영역 안 깊이 x_i에 넣은 전하는 V_t를 (1 − x_i/W)만큼만 바꿉니다. 4 nm 게이트 산화막에서는 공핍 폭이 30~40 nm로 얕아, V_t 조절 주입도 얕아져야 합니다(B 10 keV, As 30 keV).
+- 게이트 산화로 온도 +2 °C(산화막 +0.11 nm)는 V_t를 13 mV 바꿔 dose 5 % 오차(8.5 mV)보다 영향이 큽니다. LDD 측면 확산으로 L_eff는 0.5 µm에서 0.40 µm로 줄어듭니다.
+
+## 검증 요약
+
+| 모듈 | 독립 비교 대상 |
+|---|---|
+| 01 산화 | nanoFAB 공개 계산기 16개 조건 (최대 오차 0.063 %) |
+| 02 이온주입과 확산 | 해석해 vs Crank-Nicolson 수치해, BYU 이동도 계산기, Plummer 교재 예제 |
+| 03 포토리소그래피 | 원 겹침 면적 해석해, 3광속 해석해, Fresnel 적분 vs FFT 전파 |
+| 04 건식 식각 | 등방성, 이방성, Minkowski 합 정확해와 격자 수렴 |
+| 05 증착과 금속배선 | view factor 합 법칙, 입자 수지, Smits 식과 유한차분 해 |
+| 06 공정 통합 | 균일 도핑 V_t 해석해, (1 − x_i/W) 관계, 2D 확산 수치해, 교재 공정 흐름의 대표 결과 |
+
+자동 테스트는 전체 169개입니다.
+
 ## 구조
 
 ```
@@ -76,4 +97,5 @@ python -m venv .venv
 .venv/bin/python scripts/run_lithography.py
 .venv/bin/python scripts/run_etching.py
 .venv/bin/python scripts/run_deposition.py
+.venv/bin/python scripts/run_integration.py
 ```
