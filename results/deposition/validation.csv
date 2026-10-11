@@ -1,0 +1,7 @@
+case,value
+"direct flux (n=1) vs view factor, AR 2",1.0e-03
+enclosure sum rule max error,1.0e-13
+"particle balance max error (n=1, Sc 1e-4..1)",7.2e-05
+min coverage at Sc = 1e-4,0.9984
+"4PP FD vs image, D/s=10, nodes per s [4, 10, 20, 40]",0.854% / 0.190% / 0.066% / 0.030%
+"4PP FD vs image, D/s=20, nodes per s [4, 10, 20, 40]",0.708% / 0.103% / 0.029% / 0.009%

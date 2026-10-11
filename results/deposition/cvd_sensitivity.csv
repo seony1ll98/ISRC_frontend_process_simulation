@@ -1,0 +1,8 @@
+system,T_C,rate_change_pct_per_K,rate_change_pct_per_10pct_hG
+APCVD,700,1.95,0.04
+APCVD,900,1.23,0.89
+APCVD,1100,0.49,4.98
+LPCVD,700,1.96,0.0
+LPCVD,900,1.35,0.01
+LPCVD,1100,0.98,0.09
+transition,1828.6,LPCVD transition T,hG gain 108.6

@@ -11,7 +11,7 @@
 | 02 | 이온주입 및 확산 (Ion Implantation, Drive-in) | Gaussian 분포, Fick 확산(해석해와 수치해), Masetti 이동도 | 완료 | [docs/02_implant_diffusion.md](docs/02_implant_diffusion.md) |
 | 03 | 포토리소그래피 (Photolithography) | Fresnel 회절(근접 노광), Abbe 부분 결맞음 결상, 공정 창 | 완료 | [docs/03_lithography.md](docs/03_lithography.md) |
 | 04 | 건식 식각 (Dry Etching) | 선형 및 이온 보조 식각 모델, level set 단면 진화, 과식각과 선택비 설계 | 완료 | [docs/04_etching.md](docs/04_etching.md) |
-| 05 | 증착 및 금속배선 (CVD, Metallization) | Arrhenius 율속 영역, 면저항 | 예정 | |
+| 05 | 증착 및 금속배선 (CVD, PVD, Metallization) | Grove 모델, 재방출 단차 피복, 4-point probe 보정, 배선 RC 지연 | 완료 | [docs/05_deposition_metallization.md](docs/05_deposition_metallization.md) |
 | 06 | 공정 통합 (Process Integration) | CMOS 단면 구성, Vth 추정 | 예정 | |
 
 ## 01. 열산화 주요 결과
@@ -46,6 +46,14 @@
 - 이온 보조 식각은 화학 성분이 충분하고 이온이 속도를 제한할 때 이방성이 가장 좋고, 이온을 늘리면 오히려 이방성이 떨어집니다.
 - 01 모듈의 10 nm 게이트 산화막 위 poly-Si 식각에서, 과식각 20 %로 산화막 손실을 5 nm 이하로 유지하려면 선택비가 약 27 필요합니다. 교재가 제시한 25~50과 같은 범위입니다.
 
+## 05. 증착 및 금속배선 주요 결과
+
+![step coverage](figures/deposition/fig2_step_coverage.png)
+
+- 트렌치 안의 증착 두께를 입사각 분포(cosⁿθ)와 부착 확률(S_c), 재방출로 계산합니다. 스퍼터링은 측벽 위아래 두께가 9배 차이 나 overhang과 void가 생기기 쉽고, LPCVD W(S_c = 0.01)는 거의 균일하게 덮습니다.
+- LPCVD는 저압에서 물질 전달 계수가 약 100배 커져 실제 공정 온도에서 항상 반응 율속이 되므로, 가스 흐름보다 온도(700 °C에서 1 °C당 2 %)가 균일도를 정합니다.
+- 4-point probe 보정 계수를 영상법으로 계산해 Smits 식, 유한차분 해와 비교했습니다. 웨이퍼 가장자리나 작은 시료에서 4.532를 그대로 쓰면 면저항을 수~수십 % 크게 읽습니다.
+
 ## 구조
 
 ```
@@ -67,4 +75,5 @@ python -m venv .venv
 .venv/bin/python scripts/run_implant_diffusion.py
 .venv/bin/python scripts/run_lithography.py
 .venv/bin/python scripts/run_etching.py
+.venv/bin/python scripts/run_deposition.py
 ```

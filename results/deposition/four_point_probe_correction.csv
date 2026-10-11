@@ -1,0 +1,11 @@
+sample,probe_center_from_middle_mm,CF,error_if_4.532_used_pct
+100 mm wafer,0.0,4.5284,0.09
+100 mm wafer,24.2,4.5257,0.15
+100 mm wafer,38.72,4.5079,0.54
+100 mm wafer,43.56,4.4649,1.51
+100 mm wafer,45.98,4.3678,3.77
+20 mm coupon,0.0,4.4364,2.16
+20 mm coupon,4.2,4.3913,3.21
+20 mm coupon,6.72,4.2169,7.48
+20 mm coupon,7.56,4.0176,12.81
+20 mm coupon,7.98,3.8166,18.75
