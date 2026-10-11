@@ -1,0 +1,7 @@
+purpose,ambient,target_nm,T_C,model,time_min,deal_grove_time_min,si_consumed_nm,crossover_A_half_nm
+Gate oxide,dry,10,900,Massoud,23.6,64.7,4.4,211.5
+Gate oxide,dry,20,950,Massoud,31.2,60.0,8.8,154.9
+Pad / screen oxide,dry,50,1000,Massoud,60.0,81.2,22.0,116.3
+Field oxide,wet,300,1000,Deal-Grove,41.3,41.3,132.2,211.8
+Field oxide,wet,500,1050,Deal-Grove,56.2,56.2,220.4,136.8
+Field oxide,wet,1000,1100,Deal-Grove,134.0,134.0,440.7,91.2

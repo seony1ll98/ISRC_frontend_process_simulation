@@ -1,0 +1,17 @@
+ambient,pp_atm,model,orientation,xi_A,T_C,time_min,thickness_A
+dry,1,Deal-Grove,100,0,900,60,92.9
+dry,1,Deal-Grove,100,0,1000,60,385.1
+dry,1,Deal-Grove,100,0,1100,60,990.2
+dry,1,Deal-Grove,100,0,1100,240,2454.3
+dry,1,Deal-Grove,111,0,1000,60,542.0
+dry,1,Deal-Grove,100,250,1000,60,580.7
+wet,1,Deal-Grove,100,0,1000,60,4108.8
+wet,0.92,Deal-Grove,100,0,1000,60,3884.5
+wet,1,Deal-Grove,100,0,900,30,770.7
+wet,1,Deal-Grove,100,0,1100,120,9855.1
+wet,1,Deal-Grove,111,0,1100,120,10199.1
+dry,1,Massoud,100,0,800,60,56.5
+dry,1,Massoud,100,0,900,10,54.5
+dry,1,Massoud,100,0,900,60,188.7
+dry,1,Massoud,100,0,900,240,483.5
+dry,1,Massoud,100,0,1000,60,499.7
